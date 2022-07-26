@@ -54,3 +54,16 @@ function sum1(n) {
     return n + sum(n - 1);
 }
 console.log(sum(23,54)); // 77
+
+// Function methods
+
+// apply -  The apply method allows you to call a function with a given this value and argument provided as an array
+const person = {
+    firstName: 'Rohit',
+    lastName:'Roy'
+}
+function greet(greeting, message){
+    return `${greeting} ${this.firstName} ${message}`;
+}
+let greetings = greet.apply(person, ['Hello','How are you?'])
+console.log(greetings); // Hello Rohit How are you?

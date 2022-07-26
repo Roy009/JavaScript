@@ -67,3 +67,29 @@ let application = new class {
 
 
 application.start() // Starting the Awesome App...
+
+// inheritance
+// Base/Parent class
+class Vehicle{
+    constructor(speed){
+        this.speed = speed;
+    }
+    drive(){
+        console.log('The speed of the car is ' + this.speed);
+    }
+}
+// Derived/Child class
+class car extends Vehicle {
+    constructor(speed) {
+        super(speed);
+    }
+    accelarate(){
+        console.log('Accelarating.....');
+    }
+}
+
+let mustang = new car(230);
+mustang.drive(); // The speed of the car is 230
+mustang.accelarate(); // Accelarating.....
+
+
