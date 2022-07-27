@@ -67,3 +67,33 @@ function greet(greeting, message){
 }
 let greetings = greet.apply(person, ['Hello','How are you?'])
 console.log(greetings); // Hello Rohit How are you?
+
+// bind - The bind() method returns a new function, when invoked,has its this sets to a specific value.
+
+let car = {
+    speed: 5,
+    start: function() {
+        console.log('Start with ' + this.speed + ' km/h');
+    }
+}
+
+let aircraft = {
+    speed: 10,
+    fly: function() {
+        console.log('Flying');
+    }
+}
+
+// applying bind method
+let taxiing = car.start.bind(aircraft);
+
+taxiing(); // Start with 10 km/h
+
+// call - The call() method calls a function functionName with the arguments(arg1,arg2,...) into it and the this set to the thisArg object inside the function
+
+function add(x, y){
+    return x + y;
+}
+
+let result2 = add.call(this, 34, 65);
+console.log(result2);  // 99
