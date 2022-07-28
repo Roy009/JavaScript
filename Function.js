@@ -91,9 +91,24 @@ taxiing(); // Start with 10 km/h
 
 // call - The call() method calls a function functionName with the arguments(arg1,arg2,...) into it and the this set to the thisArg object inside the function
 
-function add(x, y){
+function add2(x, y){
     return x + y;
 }
 
-let result2 = add.call(this, 34, 65);
+let result2 = add2.call(this, 34, 65);
 console.log(result2);  // 99
+
+// Callback Function - callback is a function that we pass into another function as an argument for executing later
+
+function filter(numbers) {
+    let results = [];
+    for(const number of numbers) {
+        if(number % 2 != 0){
+            results.push(number);
+        }
+    }
+    return results;
+}
+
+let numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+console.log(filter(numbers)); // [1,3,5,7,9,11,13,15]
