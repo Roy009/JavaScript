@@ -36,3 +36,17 @@ console.log(Array.isArray(array)); // true
 for(let i = 0; i < array.length - 1; i++){
     console.log(array[i]);
 } 
+
+// Array Destructuring
+function getScores(){
+    return [70,80,90];
+}
+let [x,y,z] = getScores();
+console.log(x); // 70
+console.log(y); // 80
+console.log(z); // 90
+// Another way 
+let[a,b, ...args] = getScores();
+console.log(a); // 70
+console.log(b); // 80
+console.log(args); // 90
