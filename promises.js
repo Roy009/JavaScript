@@ -148,3 +148,19 @@ Promise.all([p1,p2,p3]).then((reuslts) => {
 
 // Promise.race() - 
 
+const p4 = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    console.log('The First promise has resolved');
+    resolve(10);
+  }, 1000);
+});
+const p5 = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    console.log('The Second promise has resolved');
+    reject(20);
+  }, 2000);
+});
+
+Promise.race([p1,p2]).then(value => console.log(`Resolved: ${value}`)).catch(reason => console.log(`Rejected: ${reason}`));
+
+
