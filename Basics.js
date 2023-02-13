@@ -68,5 +68,3 @@ console.log(obj1.firstName); // Rohit
 console.log(obj1.lastName); // Roy
 console.log(obj1.address.city); // kolkata
 console.log(obj1.address.state); // WestBengal
-
-
